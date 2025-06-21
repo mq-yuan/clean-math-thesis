@@ -1,5 +1,5 @@
 // global
-#import "../lib.typ": template
+#import "lib.typ": template
 
 //local
 #import "customization/colors.typ": *
@@ -7,19 +7,17 @@
 
 #show: template.with(
   // personal/subject related stuff
-  author: "Stuart Dent",
+  author: "Student Name, Student ID",
   title: "My Very Fancy and Good-Looking Thesis About Interesting Stuff",
-  supervisor1: "Prof. Dr. Sue Persmart",
-  supervisor2: "Prof. Dr. Ian Telligent",
-  degree: "Example",
-  program: "Example-Studies",
-  university: "Example University",
-  institute: "Example Institute",
-  deadline: datetime.today().display(),
+  program: "Advanced Optimization",
+  university: "Nanjing University",
+  institute: "School of Intelligence Science and Technology",
+  deadline: datetime.today(),
+  city: "Suzhou",
 
   // file paths for logos etc.
-  uni-logo: image("images/logo_placeholder.svg", width: 50%),
-  institute-logo: image("images/logo_placeholder.svg", width: 50%),
+  uni-logo: image("images/nju_all.svg", width: 100%),
+  institute-logo: none,
 
   // formatting settings
   body-font: "Libertinus Serif",
@@ -35,7 +33,9 @@
   // colors
   cover-color: color1,
   heading-color: color2,
-  link-color: color3
+  link-color: color3,
+
+  subtype: "report"
 )
 
 // ------------------- content -------------------

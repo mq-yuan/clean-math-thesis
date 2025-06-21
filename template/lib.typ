@@ -19,7 +19,7 @@
 
 
   // file paths for logos etc.
-  uni-logo: image("template/images/nju_all.svg"),
+  uni-logo: none,
   institute-logo: none,
 
   // formatting settings

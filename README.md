@@ -1,88 +1,87 @@
-# clean-math-thesis
+# Typst Course Report Template for Nanjing University
 
-[![Build Typst Document](https://github.com/sebaseb98/clean-math-thesis/actions/workflows/build.yml/badge.svg)](https://github.com/sebaseb98/clean-math-thesis/actions/workflows/build.yml)
-[![Repo](https://img.shields.io/badge/GitHub-repo-blue)](https://github.com/sebaseb98/clean-math-thesis)
+[![Build Status](https://github.com/mq-yuan/clean-math-thesis/actions/workflows/build.yml/badge.svg)](https://github.com/mq-yuan/clean-math-thesis/actions/workflows/build.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-success.svg)](https://opensource.org/licenses/MIT)
 
-[Typst](https://typst.app/home/) thesis template for mathematical theses built for simple, efficient use and a clean look.
-Of course, it can also be used for other subjects, but the following math-specific features are already contained in the template:
+A personal Typst template for course reports at Nanjing University. This template is a modification of the original [clean-math-thesis](https://github.com/sebaseb98/clean-math-thesis) template, adapted for general course report usage.
 
-- theorems, lemmas, corollaries, proofs etc. prepared using [great-theorems](https://typst.app/universe/package/great-theorems)
-- equation settings (using either [equate](https://typst.app/universe/package/equate) for numbering of subequations or [i-figured](https://typst.app/universe/package/i-figured/) for equation numbering which includes the chapter number)
-- pseudocode package [lovelace](https://typst.app/universe/package/lovelace) included.
+This template is designed for simple, efficient use and a clean, modern look. It retains many of the powerful features from the original, including:
 
-Additionally, it has headers built with [hydra](https://typst.app/universe/package/hydra).
+- Pre-configured theorem environments via [great-theorems](https://typst.app/universe/package/great-theorems).
+- Flexible equation numbering using [equate](https://typst.app/universe/package/equate) or [i-figured](https://typst.app/universe/package/i-figured/).
+- Pseudocode support with [lovelace](https://typst.app/universe/package/lovelace).
+- Headers managed by [hydra](https://typst.app/universe/package/hydra).
 
-## Set-Up
-The template is already filled with dummy data, to give users an [impression what it looks like](https://github.com/sebaseb98/clean-math-thesis/blob/main/template/main.pdf). The thesis is obtained by compiling `main.typ`.
+## Preview
 
-- after [installing Typst](https://github.com/typst/typst?tab=readme-ov-file#installation) you can conveniently use the following to create a new folder containing this project.
-```bash
-typst init @preview/clean-math-thesis:0.3.0
-```
+The template is filled with dummy data to provide an impression of the final output. You can view the compiled PDF result here: [template/main.pdf](./template/main.pdf).
 
+## How to Use
 
-- edit the data in `main.typ` → `#show template.with([your data])`
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/mq-yuan/clean-math-thesis.git](https://github.com/mq-yuan/clean-math-thesis.git)
+    cd clean-math-thesis
+    ```
 
-### Parameters of the Template
-<ins>personal/subject related information</ins>
-- `author`: Name of the author of the thesis.
-- `title`: Title of the thesis.
-- `supervisor1`: Name of the first supervisor.
-- `supervisor2`: Name of the second supervisor.
-- `degree`: Degree for which the thesis is submitted.
-- `program`: Program under which the thesis is submitted.
-- `university`: Name of the university.
-- `institute`: Name of the institute.
-- `deadline`: Submission deadline of the thesis.
+2.  **Install Typst:**
+    If you haven't already, [install Typst](https://github.com/typst/typst?tab=readme-ov-file#installation) on your system.
 
-<ins>file paths for logos etc.</ins>
-- `uni-logo`: Image, e.g. `image("images/logo_placeholder.svg", width: 50%)`
-- `institute-logo`: Image.
+3.  **Edit `main.typ`:**
+    The main configuration is done in `main.typ`. Open this file and modify the parameters within the `#show template.with(...)` block to match your report's details.
 
-<ins>formatting settings</ins>
-- `citation-style`: Citation style to be used in the thesis.
-- `body-font`: Font to be used for the body text.
-- `cover-font`: Font to be used for the cover text.
+4.  **Write your content:**
+    Add your content in the body of `main.typ` or include it from other `.typ` files (e.g., `chapters/chapter1.typ`).
 
-<ins>content that needs to be placed differently then normal chapters</ins>
-- `abstract`: Content for the abstract section.
+5.  **Compile the document:**
+    Run the following command in your terminal to compile the report into a PDF:
+    ```bash
+    typst compile template/main.typ
+    ```
+    The output will be `main.pdf` inside the `template` directory.
 
-<ins>equation settings</ins>
-- `equate-settings`: either none -> use i-figured; or tuple with the settings for the equations (see [docs](https://typst.app/universe/package/equate)), e.g. (breakable: true, sub-numbering: true, number-mode: "label")
-The switching between these is currently not optimal: i-figured needs a prefix (`eq:`) so if we label an equation like `<equation>` the corresponding reference is `@eq:equation` and for equate we don't have this prefix, i.e. the reference would be `@equation` in this example. This is something to be improved in future releases.
-- `equation-numbering-pattern`: specify the [numbering](https://typst.app/docs/reference/model/numbering/#parameters-numbering) of the equations. The second counting symbol (e.g. the `a` in `"(1.a)"`) is either used for subequation numbering or for the numbering of equations in the chapters.
-<ins>colors</ins>
-- `cover-color`: Color used for the cover.
-- `heading-color`: Color used for headings.
-- `link-color`: Color used for links and references.
+### Template Parameters
 
+These are the main parameters you can set in `main.typ`:
+
+**Report & Author Information:**
+* `title`: The title of your course report.
+* `author`: Your name.
+* `student-id`: Your student ID number.
+* `instructor`: The name of your course instructor or professor.
+* `course-name`: The name of the course.
+* `university`: The name of the university (pre-filled as "Nanjing University").
+* `institute`: Your school or department.
+* `deadline`: The submission deadline for the report.
+
+**File Paths:**
+* `uni-logo`: Path to the university logo, e.g., `image("logos/nju-logo.svg")`.
+* `institute-logo`: Path to the institute or department logo.
+
+**Formatting & Content:**
+* `abstract`: The content for the abstract section.
+* `citation-style`: The citation style to be used (e.g., `ieee`, `apa`).
+* `body-font`: The main font for the body text.
+* `cover-font`: The font used on the cover page.
+* `equate-settings`: Settings for equation numbering. See the original README for details on switching between `equate` and `i-figured`.
+
+**Colors:**
+* `cover-color`: Color used for elements on the cover page.
+* `heading-color`: Color for chapter and section headings.
+* `link-color`: Color for hyperlinks and cross-references.
 
 ### Other Customizations
-- `declaration.typ` should be modified
-- when adding chapters, remember to include them into the `main.typ`.
-- (optional) change colors and appearance of the theorem environment in the `customization/`-folder.
 
-### Use of the template in existing projects
-If you want to change an existing typst project structure to use this template, just type the following lines
-
-```typ
-#import "@preview/clean-math-thesis:0.3.0": template
-
-#show: template.with(
-  // your user specific data, parameters explained above
-)
-
-#include "my_content.typ"  // and eventually more files
-```
-
+-   **Declaration:** The `declaration.typ` file should be modified to contain the academic integrity declaration required by your university or course.
+-   **Chapters:** When adding new content files, remember to include them in `main.typ`.
+-   **Theorem Styles:** You can change the colors and appearance of theorem environments in the `customization/` folder.
 
 ## Disclaimer
-This template was created after Sebastian finished his master's thesis.
-We do not guarantee that it will be accepted by any university, please clarify in advance if it fulfills all requirements. If not, this template might still be a good starting point.
+
+This is a personal template. While it aims for a professional look, there is no guarantee that it will be accepted by your department or instructor. Please verify that it fulfills all specific formatting requirements for your course report.
 
 ## Acknowledgements
-As inspiration on how to structure this template, we used the [modern-unito-thesis](https://typst.app/universe/package/modern-unito-thesis) template. The design is inspired by the [fau-book](https://github.com/FAU-AMMN/fau-book) template.
 
-## Feedback & Improvements
-If you encounter problems, please open issues. In case you found useful extensions or improved anything We are also very happy to accept pull requests.
+-   This template is based on the excellent [clean-math-thesis](https://typst.app/universe/package/clean-math-thesis) template by Sebastian Eberle and Joshua Lampert.
+-   The design was inspired by the [fau-book](https://github.com/FAU-AMMN/fau-book) LaTeX template.
+-   Inspiration for the template structure was drawn from [modern-unito-thesis](https://typst.app/universe/package/modern-unito-thesis).
