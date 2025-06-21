@@ -4,7 +4,6 @@
 //local
 #import "customization/colors.typ": *
 
-
 #show: template.with(
   // personal/subject related stuff
   author: "Student Name, Student ID",

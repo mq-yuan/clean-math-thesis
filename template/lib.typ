@@ -194,6 +194,7 @@ show figure.where(
   kind: table
 ): set figure.caption(position: top)
 
+
 // ------------------- Cover -------------------
 set text(font: cover-font)  // cover font
 

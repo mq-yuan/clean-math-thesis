@@ -1,5 +1,6 @@
 // package imports
 #import "@preview/lovelace:0.3.0": *
+#import "@preview/muchpdf:0.1.1": muchpdf
 
 // own imports
 #import "../customization/great-theorems-customized.typ": *
@@ -115,3 +116,52 @@ In @table:irrational_numbers we compare some irrational numbers, my favourite on
     [$pi$], table.cell(fill:green)[#calc.round(calc.pi, digits: 2)],
 )
 )<table:irrational_numbers>
+
+#lorem(20)
+
+@table:sample_table is a Three-Line Table Example.
+
+
+#show figure.caption: it => {
+  set align(left)
+  set text(size: 9pt)
+  it
+}
+#figure(
+  caption: [
+    A sample table demonstrating various data points and their relationships.
+    This table structure is useful for presenting comparative data clearly.
+  ],
+  table(
+    columns: (2fr, 2fr, 2fr, 2fr),
+    align: (left, center, center, center),
+    stroke: none,
+    table.hline(stroke: 1.0pt),
+    [*Header 1*], [*Header 2*], [*Header 3*], [*Header 4*],
+    table.hline(stroke: 0.6pt),
+    [Category A], [Data Point 1A], [Data Point 2A], [Description A],
+    [Category B], [Data Point 1B], [Data Point 2B], [Description B],
+    [Category C], [Data Point 1C], [Data Point 2C], [Description C],
+    [Category D], [Data Point 1D], [Data Point 2D], [Description D],
+    [Category E], [Data Point 1E], [Data Point 2E], [Description E],
+    table.hline(stroke: 1.0pt),
+  )
+)<table:sample_table>
+
+#lorem(20)
+
+@fig:example is a pdf image.
+#figure(
+  // The muchpdf function reads a PDF. If you don't have it, you might need to install a package.
+  // The call below assumes the PDF has its own bounding box.
+  muchpdf(
+    read("../images/logo_placeholder.pdf", encoding: none),
+    width: 30%
+  ),
+  caption: [
+    An example diagram included from an external PDF file. This method is
+    ideal for including complex vector graphics or diagrams created in other
+    software. The adaptive display ensures optimal presentation while maintaining
+    the visual integrity of the original graphic.
+  ]
+)<fig:sample_pdf_figure>
